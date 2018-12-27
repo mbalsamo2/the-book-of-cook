@@ -1,0 +1,7 @@
+<h1>Name: <%= @recipe.name %></h1>
+
+<ol>
+<% @instructions.each do |instruction| %>
+    <li><%= instruction.instruction_text %></li>
+<% end %>
+</ol>
