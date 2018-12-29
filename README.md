@@ -1,24 +1,18 @@
-# README
+The Book of Cook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A place for any chef to store recipes!
 
-Things you may want to cover:
+Usage
 
-* Ruby version
+tbd
 
-* System dependencies
+Installation
 
-* Configuration
+git clone git@github.com:mbalsamo2/the-book-of-cook.git
+cd the-book-of-cook
+bundle install
+rake db:migrate
+rails s
+Contributing Bug reports and pull requests are welcome on GitHub at https://github.com/mbalsamo2/the-book-of-cook. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+License The gem is available as open source under the terms of the MIT License.
