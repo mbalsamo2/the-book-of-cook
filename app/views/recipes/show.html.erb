@@ -1,7 +1,17 @@
 <h1>Name: <%= @recipe.name %></h1>
 
+<h3>Total Time: <%= @recipe.cook_time %></h3>
+<h3>Yields: <%= @recipe.yeild %></h3>
 <ol>
-<% @instructions.each do |instruction| %>
-    <li><%= instruction.instruction_text %></li>
-<% end %>
+  <h3>Ingredients:</h3>
+  <% @ingredients.each do |ingredient| %>
+      <li><%= ingredient.ingredient_text %></li>
+  <% end %>
+</ol>
+
+<ol>
+  <h3>Instructions:</h3>
+  <% @instructions.each do |instruction| %>
+      <li><%= instruction.instruction_text %></li>
+  <% end %>
 </ol>
