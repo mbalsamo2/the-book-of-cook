@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @recipe.ingredients.build()
   end
 
   def create
@@ -24,6 +25,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :yeild, :cook_time)
+    params.require(:recipe).permit(:name, :yeild, :cook_time, :ingredients_attributes => [:ingredient_text])
   end
 end

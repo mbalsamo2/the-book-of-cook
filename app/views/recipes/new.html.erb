@@ -7,5 +7,11 @@
   <%= f.text_field :cook_time %><br>
   <%= f.label :yeild %>
   <%= f.text_field :yeild %><br>
+
+  <%= f.fields_for :ingredients do |ingredient_builder| %>
+    <%= ingredient_builder.label :ingredient_text %>
+    <%= ingredient_builder.text_field :ingredient_text %><br>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
