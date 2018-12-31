@@ -1,6 +1,7 @@
 <h1>Create a New Recipe</h1>
 
 <%= form_for(@recipe) do |f| %>
+
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :cook_time %>
@@ -11,6 +12,11 @@
   <%= f.fields_for :ingredients do |ingredient_builder| %>
     <%= ingredient_builder.label :ingredient_text %>
     <%= ingredient_builder.text_field :ingredient_text %><br>
+  <% end %>
+
+  <%= f.fields_for :instructions do |instruction_builder| %>
+    <%= instruction_builder.label :instruction_text %>
+    <%= instruction_builder.text_field :instruction_text %><br>
   <% end %>
 
   <%= f.submit %>
