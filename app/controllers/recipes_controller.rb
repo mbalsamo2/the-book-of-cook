@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :current_recipe, only: %i[show, edit, update]
+  before_action :current_recipe, only: %i[show edit update destroy]
 
   def index
     @recipes = Recipe.all
@@ -34,6 +34,14 @@ class RecipesController < ApplicationController
       redirect_to @recipe
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @recipe.delete
+      redirect_to recipes_path
+    else
+      redirect_to root
     end
   end
 

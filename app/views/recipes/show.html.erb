@@ -1,5 +1,7 @@
 <h1>Name: <%= @recipe.name %></h1>
 
+<p><%=link_to "Edit Recipe", edit_recipe_path(@recipe)%> - <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete %></p>
+
 <h3>Total Time: <%= @recipe.cook_time %></h3>
 <h3>Yields: <%= @recipe.yeild %></h3>
 
