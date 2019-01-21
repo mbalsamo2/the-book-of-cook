@@ -2,16 +2,15 @@
 
 <h3>Total Time: <%= @recipe.cook_time %></h3>
 <h3>Yields: <%= @recipe.yeild %></h3>
-<ol>
-  <h3>Ingredients:</h3>
-  <% @ingredients.each do |ingredient| %>
-      <li><%= ingredient.ingredient_text %></li>
-  <% end %>
-</ol>
 
-<ol>
-  <h3>Instructions:</h3>
-  <% @instructions.each do |instruction| %>
-      <li><%= instruction.instruction_text %></li>
-  <% end %>
-</ol>
+<h3>Ingredients: </h3>
+<% @recipe.ingredients_list.each do |ingredient| %>
+  <ul>
+    <li><%= ingredient %></li>
+  </ul>
+<% end %>
+
+<h3>Instructions: </h3>
+<% @recipe.instructions_list.each.with_index(1) do |instruction, index| %>
+    <h4><%="#{index}. #{instruction}"%></h4>
+<% end %>
