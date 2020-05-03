@@ -12,6 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2019_01_30_200734) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "playground", primary_key: "equip_id", id: :serial, force: :cascade do |t|
+    t.string "type", limit: 50, null: false
+    t.string "color", limit: 25, null: false
+    t.string "location", limit: 25
+    t.date "install_date"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.string "yeild"
