@@ -9,13 +9,21 @@
   <%= f.label :yeild %>
   <%= f.text_field :yeild %><br>
 
-  <h4>List each new ingredient on a brand new line.</h4>
-  <%= f.label :ingredients %>
-  <%= f.text_area :ingredients %><br>
+  <div>
+   <h3>Add an Ingredient:</h3>
+   <%= f.fields_for :ingredient, Ingredient.new do |ingredients|%>
+       <%= ingredients.label :ingredient_name, "Ingredient:" %>
+       <%= ingredients.text_field :ingredient_name %>
+   <% end %>
+ </div>
 
-  <h4>List each new instruction on a brand new line.</h4>
-  <%= f.label :instructions %>
-  <%= f.text_area :instructions %><br>
+ <div>
+  <h3>Add an Instruction:</h3>
+  <%= f.fields_for :instruction, Instruction.new do |instructions|%>
+      <%= instructions.label :instruction, "Instruction:" %>
+      <%= instructions.text_field :instruction %>
+  <% end %>
+</div>
 
   <%= f.submit %>
 <% end %>
