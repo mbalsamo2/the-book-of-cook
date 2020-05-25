@@ -11,19 +11,37 @@
 
   <div>
    <h3>Add an Ingredient:</h3>
-   <%= f.fields_for :ingredient, Ingredient.new do |ingredients|%>
-       <%= ingredients.label :ingredient_name, "Ingredient:" %>
-       <%= ingredients.text_field :ingredient_name %>
+   <%# add button here to add more blank ingredients when needed  %>
+   <%= f.fields_for :ingredients, Ingredient.new do |ingredients_form|%>
+       <%= ingredients_form.label :ingredient_name %>
+       <%= ingredients_form.text_field :ingredient_name %>
+   <% end %>
+   <%= f.fields_for :ingredients, Ingredient.new do |ingredients_form|%>
+       <%= ingredients_form.label :ingredient_name %>
+       <%= ingredients_form.text_field :ingredient_name %>
+   <% end %>
+   <%= f.fields_for :ingredients, Ingredient.new do |ingredients_form|%>
+       <%= ingredients_form.label :ingredient_name %>
+       <%= ingredients_form.text_field :ingredient_name %>
    <% end %>
  </div>
 
+
  <div>
   <h3>Add an Instruction:</h3>
-  <%= f.fields_for :instruction, Instruction.new do |instructions|%>
-      <%= instructions.label :instruction, "Instruction:" %>
+  <%= f.fields_for :instructions, Instruction.new do |instructions|%>
+      <%= instructions.label :instruction %>
+      <%= instructions.text_field :instruction %>
+  <% end %>
+  <%= f.fields_for :instructions, Instruction.new do |instructions|%>
+      <%= instructions.label :instruction %>
+      <%= instructions.text_field :instruction %>
+  <% end %>
+  <%= f.fields_for :instructions, Instruction.new do |instructions|%>
+      <%= instructions.label :instruction %>
       <%= instructions.text_field :instruction %>
   <% end %>
 </div>
 
-  <%= f.submit %>
+  <%= f.submit 'Create Recipe!' %>
 <% end %>

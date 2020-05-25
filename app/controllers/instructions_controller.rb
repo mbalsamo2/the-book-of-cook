@@ -6,6 +6,6 @@ class InstructionsController < ApplicationController
   private
 
   def instructions_params
-    params.require(:instruction).permit(:instruction_name)
+    params.require(:instruction).permit(:instruction)
   end
 end

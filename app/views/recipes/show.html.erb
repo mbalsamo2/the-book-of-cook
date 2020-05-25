@@ -7,14 +7,14 @@
 
 <ul>
   <h3>Ingredients: </h3>
-  <% @recipe.ingredients_list.each do |ingredient| %>
-      <li><%= ingredient %></li>
+  <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient.ingredient_name %></li>
   <% end %>
 </ul>
 
 <ol>
   <h3>Instructions: </h3>
-  <% @recipe.instructions_list.each do |instruction| %>
-      <li><%=instruction%></li>
+  <% @recipe.instructions.each do |instruction| %>
+      <li><%= instruction.instruction %></li>
   <% end %>
 </ol>
