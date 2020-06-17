@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem "react_on_rails", "11.1.4" # Update to the current version
+gem "webpacker", "~> 3" # Newer versions might be supported
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
